@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BookApi</name>
+    </assembly>
+    <members>
+        <member name="M:BookApi.Controllers.BookController.AddBook(BookApi.Model.ViewModels.BookVM)">
+            <summary>
+            Add's a book
+            </summary>
+            <param name="book"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BookApi.Controllers.BookController.GetAllBooks">
+            <summary>
+            Get's a list of books
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BookApi.Controllers.BookController.GetBookById(System.Int32)">
+            <summary>
+            get a book by id
+            </summary>
+            <param name="bookId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BookApi.Controllers.BookController.UpdateBookById(System.Int32,BookApi.Model.ViewModels.BookVM)">
+            <summary>
+            Update an existing
+            </summary>
+            <param name="bookId"></param>
+            <param name="book"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BookApi.Controllers.BookController.DeleteBookById(System.Int32)">
+            <summary>
+            Delete an existing book
+            </summary>
+            <param name="bookId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BookApi.Controllers.BookV2Controller.GetAllBooks">
+            <summary>
+            Get's a list of books with BookAPI Version 2
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BookApi.Controllers.BookV2Controller.UpdateBookById(System.Int32,BookApi.Model.ViewModels.BookVM)">
+            <summary>
+            Update an existing with BookAPI version 2
+            </summary>
+            <param name="bookId"></param>
+            <param name="book"></param>
+            <returns></returns>
+        </member>
+        <member name="F:BookApi.Controllers.TeachersController._repository">
+            <summary>
+            XML Documentation Implemented
+            </summary>
+        </member>
+        <member name="M:BookApi.Controllers.TeachersController.GetTeachers(BookApi.Model.Services.Helpers.TeacherResourceParameters)">
+            <summary>
+            Returns a list of teachers
+            </summary>
+            <param name="filters"> The filter for this resource </param>
+            <returns></returns>
+        </member>
+        <member name="M:BookApi.Controllers.TeachersController.GetTeacher(System.Guid)">
+            <summary>
+            Get a particular teacher
+            </summary>
+            <param name="teacherId"> The techer id </param>
+            <returns></returns>
+        </member>
+        <member name="M:BookApi.Controllers.TeachersController.CreateTeacher(BookApi.Model.DTO.CreateTeacherDTO)">
+            <summary>
+            Creates a teacher
+            </summary>
+            <param name="teacher"> The teacher model </param>
+            <returns></returns>
+        </member>
+        <member name="M:BookApi.Controllers.TeachersController.DeleteTeacher(System.Guid)">
+            <summary>
+            Deletet a teacher
+            </summary>
+            <param name="teacherId"> The teacher's id </param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

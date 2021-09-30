@@ -1,0 +1,100 @@
+﻿REST is intended to evoke an image of how a well designed web application behaves
+
+
+
+
+REST CONSTRAINTS:
+Uniform Interface - API and consumers share one single, technical interface:
+	URI, Method, media type (payload)
+	Content-Type header is used to signify the type of a payload in the request body
+	e.g Application/Json, XML
+	Accept header is used by HTTP clients to tell
+	the server which type of content they expect/prefer as response.
+
+		Manipulation of resources through representations - When a client holds a representation of
+			a resource, including any possible meta data, it should have enough information to modify
+			or delete the resources on the server, provided it has permission to do so
+			...the response should contain the uri to delete, get, post the resource if the api supports
+			...the operations
+
+		Self-descriptive message - each message must include enough information to describe how to
+			process the message. when a consumer request a resource from the api, we send the requ
+			est message, and when it gets back data thats a response message
+
+HATEOAS - Hypermedia As The Engine Of Application State
+	- tells the user is the resource can be deleted
+	- if the resource can be created
+	- if the resource can be updated
+	- allows for a self documenting API
+
+Richardson Maturity model
+	Only level 3 API could be considered as restful 
+
+
+ HTTP VERDS
+ GET, PUT, PATCH, POST 
+
+ Resource Naming guidelines
+ URI names should be NOUNS and not Action
+
+ API/GetAuthors - wrong
+ API/Authors - right
+ API/Author - right
+ either you pluralize or not, stay consistent
+
+ Hierarchy in resource should be seen from a URI
+ API/Author/authorId/Course/courseId
+
+
+ STATUS CODE
+ 204 - NO Content - when we Delete
+
+ 400 - client error
+ 400 -badRequest
+ 401 - unauthorized - invalid authetication details
+ 403 - forbidden - authetication suceed but the authenticaed user has no access to the resource
+ 405 - method not allowed - posting to an endpoint that supports GET with Post
+ 406 - not acceptable - requsted a format not supported by the application
+	e.g asking for application/xml type when the api allows only application/json
+415 - unsupported media type
+	sending data in a format not supported by the API
+422 - unprocessible entity
+	used for validation issues
+
+
+
+complex types are inferred from the body of a request
+
+use /// for XML Documentation, to add the documentations, follow steps below
+	1. right click on the project
+	2. Select properties
+	3. select build tab and check the XML documetation checkbox, edit the path value to bookapi.xml
+	4. add .includeXmlComments on startup.cs (services.AddSwagerGen)
+
+When XML comment is added, classes without documentation will cause warnings,
+to clear the warning:
+. go to properties, build tab, add the xml warning code (1591) to the suppress warning input field
+
+
+DOCUMENTING DIFFERENT CONTROLLERS SEPERATLY
+1. Create a swagger doc
+2. Add the doc to the swager endpoint
+3. Aroups in the controller class that would share the doc
+
+VERSIONING API
+
+install the packages:
+1. microsoft.aspnetcore.mvc.versioning
+2. microsoft.aspnetcore.mvc.versioning.apiexplorer
+
+add the packages in the startup class
+
+
+
+
+
+TO-DO
+1. Mark all controller action with the proper response type
+2. Document all endpoints
+3. Change all endpoints to return actionresult
+4. for all created at route, pass-in the version number in the anonymous object, check bookcontroller
